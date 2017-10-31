@@ -1,4 +1,4 @@
-var DOM = {
+var D = {
 	append: function(e,e2){
 		e.appendChild(e2);
 	},
@@ -58,3 +58,29 @@ var DOM = {
 		},
 	}
 };
+
+var S = {
+	width: function(el) {
+		var r = el.getBoundingClientRect();
+		return r.weight;
+	},
+
+	height: function(el) {
+		var r = el.getBoundingClientRect();
+		return r.height;
+	},
+
+	pageTop: function(el) {
+		var r = el.getBoundingClientRect();
+		return r.top;
+	},
+
+	pageLeft: function(el) {
+		var r = el.getBoundingClientRect();
+		return r.left;
+	},
+
+	css: function(el, prop[,val]){
+		el.style.prop = 'val';
+	}
+}

@@ -2,7 +2,7 @@ xy = {};
 
 Object.defineProperty(xy, "px", {
   set: function(val){
-    sif (typeof(val) == "number") this.x = val;
+    if (typeof(val) == "number") this.x = val;
   }
 });
 

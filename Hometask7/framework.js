@@ -1,4 +1,4 @@
-var D = {
+var DOM = {
 	append: function(e,e2){
 		e.appendChild(e2);
 	},
@@ -80,7 +80,17 @@ var S = {
 		return r.left;
 	},
 
-	css: function(el, prop[,val]){
-		el.style.prop = 'val';
+	css: function(el, prop ,val){
+		if (typeof(val) == 'undefined') el.style[prop]
+		else el.style[prop] = val;
 	}
+}
+
+var a = {
+ajax: function (method, path, callback){
+	var xhr = new XMLHttpRequest();
+	xhr.open(method, path, true);
+	xhr.onload = callback(this.responseText)
+	xhr.send(null);
+}
 }

@@ -87,10 +87,15 @@ var S = {
 }
 
 var a = {
-ajax: function (method, path, callback){
-	var xhr = new XMLHttpRequest();
-	xhr.open(method, path, true);
-	xhr.onload = callback(this.responseText)
-	xhr.send(null);
-}
+	ajax: function (method, path, callback){
+		var f = function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open(method, path, true);
+			xhr.onload = function(){
+				var text = this.responseText
+				callback(text);
+			}
+		}	
+		xhr.send(null);
+	}
 }

@@ -1,0 +1,56 @@
+{
+	"Sport":
+		[ 
+			{
+				"title": "Sneakers",
+				"price": 100.00,
+				"country": "USA"
+			},
+			{
+				"title": "Ball",
+				"price": 60.00,
+				"country": "Spain"
+			},
+			{
+				"title": "Sport suit",
+				"price": 300.00,
+				"country": "UK"
+				}
+		],
+	"Food": 
+		[
+			{
+				"title": "Milk",
+				"price": 12.00,
+				"country": "Belarus"
+			},
+			{
+				"title": "Butter",
+				"price": 20.00,
+				"country": "Belarus"
+			},
+			{
+				"title": "Yogurt",
+				"price": 23.00,
+				"country": "Russia"
+			}
+		],
+	"Electric":
+		[
+			{
+				"title": "Laptop",
+				"price": 2500.00,
+				"country":"USA"
+			},
+			{
+				"title": "Smartphone",
+				"price": 1000.00,
+				"country": "China"
+			},
+			{
+				"title": "TV",
+				"price": 1500,
+				"country": "UK"
+			}
+		]
+}

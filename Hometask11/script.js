@@ -1,42 +1,49 @@
 var settings = {
-	'#bhello': 'bhello.html',
-	'#pic': 'pic.html',
-	'#hello': 'hello.html',
-	'#prompt': 'prompt.html',
-	'#button': 'but.html'
+	'#music': {
+		path: 'music.html',
+		handler: function(){}
+	},
+	'#pic': {
+		path: 'pic.html',
+		handler: function(){}
+	},
+	'#hello': {
+		path: 'hello.html',
+		handler: function(){}
+	},
+	'#name': {
+		path: 'name.html',
+		handler: function(){
+			var d = document.getElementById('yname');
+			var yname = prompt('Enter your name');
+			d.innerHTML += yname;
+		}
+	},
+	'#+1': {
+		path: 'plus1.html',
+		handler: function(){
+			var btn = document.getElementById('+1');
+			var i = 1;
+			btn.addEventListener('click', function(){
+				alert(i);
+				i++
+			});
+		}
+	},
 };
 
 var div = document.getElementById('div');
 
 var changeHashRoute = function(){
 	if (location.hash in settings){
-		var path = settings[location.hash];
+		var path = settings[location.hash].path;
+		var h = settings[location.hash].handler;
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', path, true);
-		if (String(location.hash) == '#prompt'){
-			xhr.onload = function(){
-				console.log(location.hash);
-				var iname = prompt('Введите ваше имя.');
-				div.innerText = iname;
-			}
+		xhr.onload = function(){
+			div.innerHTML = this.responseText;
+			h();
 		}
-		else if (String(location.hash) == '#button'){
-			xhr.onload = function(){
-				var i = 0;
-				var but = document.createElement('button');
-				but.setAttribute('type', 'button');
-				but.textContent = '+1';
-				div.appendChild(but);
-				but.addEventListener('click', function(){
-					i++;
-					alert(i);
-				}); 
-			}
-		}
-		else
-			xhr.onload = function(){
-				div.innerHTML = this.responseText;
-			}
 		xhr.send(null);
 	}
 }

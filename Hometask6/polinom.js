@@ -1,25 +1,31 @@
-var in1 = document.getElementById('in1');
-var in2 = document.getElementById('in2');
 var body = document.getElementById('body');
 var btn = document.getElementById('+');
-var div;
-var inp;
-var btn1;
-var input = 1;
-var b = -1;
-var del;
+var sum = document.getElementById('sum');
+var otv = document.getElementById('otv');
+var input = document.getElementsByTagName('input');
+var sum1 = 0;
+
 btn.addEventListener('click', function(){
-	// body.appendChild(div);
-	div = document.createElement('div');
-	inp = document.createElement('input');
-	btn1 = document.createElement('button');
-	btn1.textContent = 'X';
-	body.appendChild(div);
+	var div = document.createElement('div');
+	var inp = document.createElement('input');
+	var del = document.createElement('button');
+	del.setAttribute('class','del');
+	del.textContent = 'X'
+	body.appendChild(div)
 	div.appendChild(inp);
-	div.appendChild(btn1);
-	inp.id = input;
-	btn1.id = b;
-	b--;
-	input++;
+	div.appendChild(del);
+	var delt = document.getElementsByClassName('del');
+	for (var i = 0; i < delt.length; i++){
+		delt[i].addEventListener('click', function(){
+			this.parentNode.remove();
+		});
+	};
 });
 
+sum.addEventListener('click', function(){
+	for (var i = 0; i < input.length; i++){
+		sum1 += Number(input[i].value);
+	};	
+	otv.textContent = sum1;
+	sum1 = 0;
+});

@@ -13,7 +13,7 @@ ops.forEach(function(op){
 	op.addEventListener('click', function(){
 	alert(op.value);
 	sel.style.display = 'none';
-});
+	});
 });
 
 
@@ -27,7 +27,7 @@ document.documentElement.addEventListener('contextmenu', function(e){
 	var x = e.clientX;
 	var y = e.clientY;
 	console.log("x: " + x);
-	console.log("y: "+y);
+	console.log("y: " + y);
 	console.log(document.documentElement.clientWidth);
 	console.log(document.documentElement.clientHeight); 
 	if((x + w > document.documentElement.clientWidth) || (y + h > document.documentElement.clientHeight)) x = x - w; y = y - h;

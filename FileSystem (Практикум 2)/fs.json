@@ -1,0 +1,56 @@
+[
+	{
+		"type": "folder",
+		"title": "folder",
+		"items": 
+		[
+			{
+				"type": "file",
+				"title": "Hello!",
+				"adr": "text.txt",
+				"size": 6
+			}
+		] 
+	},
+
+	{
+		"type": "folder",
+		"title": "folder1",
+		"items":
+		[
+			{
+				"type": "file",
+				"title": "Poem",
+				"adr": "poem.txt",
+				"size": 506
+			},
+			
+			{
+				"type": "folder",
+				"title": "folder2",
+				"items":
+				[
+					{
+						"type": "file",
+						"title": "Legend",
+						"adr": "legend.txt",
+						"size": 1714
+					},
+					{
+						"type": "file",
+						"title": "Fairy tale",
+						"adr": "legend.txt",
+						"size": 12533
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"type": "file",
+		"title": "Top Secret",
+		"adr": "secret.txt",
+		"size": 146
+	}	
+]

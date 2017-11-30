@@ -31,7 +31,7 @@ function green(e){
 		else if (slovo == 'ЗЕБРА') document.getElementById('z').style.color = 'green';
 		else if (slovo == 'НОСОРОГ') document.getElementById('n').style.color = 'green';
 		else if (slovo == 'МОРЖ') document.getElementById('m').style.color = 'green';
-		else if (slovo == 'ПАНТЕРА') document.getElementById('p').style.color = 'grren';
+		else if (slovo == 'ПАНТЕРА') document.getElementById('p').style.color = 'green';
 		else {
 			for (i = 0; i < arr.length; i++){
 				arr[i].classList.remove('green');

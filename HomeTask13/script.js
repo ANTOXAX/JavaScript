@@ -6,7 +6,9 @@ var u = document.getElementById('u');
 txt.contentEditable = true;
 //document.execCommand(command, false, data);
 b.addEventListener('click', function(){
+	txt.focus();
 	document.execCommand('bold', false, null);
+	this.classList.toggle('on');
 });
 
 i.addEventListener('click', function(){
@@ -17,7 +19,6 @@ u.addEventListener('click', function(){
 	document.execCommand('underline', false, null);
 })
 
-txt.addEventListener('select', function(){
-	if (document.queryCommandEnabled('bold') == true) info.innerHTML = 'Жирный текст';
-	else info.innerHTML = 'Обычный текст'; 
+txt.addEventListener('input', function(){
+	if (document.queryCommandEnbled('bold') == false) 
 })

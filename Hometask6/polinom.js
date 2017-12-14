@@ -3,12 +3,15 @@ var btn = document.getElementById('+');
 var sum = document.getElementById('sum');
 var otv = document.getElementById('otv');
 var input = document.getElementsByTagName('input');
+var c = 1
 var sum1 = 0;
 
 btn.addEventListener('click', function(){
 	var div = document.createElement('div');
 	var inp = document.createElement('input');
 	var del = document.createElement('button');
+	div.innerHTML = 'c<sub>' + c + '</sub>: ';
+	c++;
 	del.setAttribute('class','del');
 	del.textContent = 'X'
 	body.appendChild(div)
@@ -23,9 +26,16 @@ btn.addEventListener('click', function(){
 });
 
 sum.addEventListener('click', function(){
-	for (var i = 0; i < input.length; i++){
-		sum1 += Number(input[i].value);
-	};	
-	otv.textContent = sum1;
-	sum1 = 0;
+	sum1 = Number(input[6].value);
+	for (var i = 7; i < input.length; i++){
+		sum1 += Math.pow(input[5].value, i-6)*input[i].value
+	};
+	if (sum1 == NaN){
+		otv.innerHTML = 'Корректно заполните все поля.';
+		sum1 = 0;
+	}
+	else{
+		otv.innerHTML = sum1;
+		sum1 = 0;
+	}
 });
